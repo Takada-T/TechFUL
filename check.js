@@ -10,15 +10,26 @@ var server = http.createServer(function(req, res) {
 */
 //sserver.listen(8000);
 
-console.log('1');
 
 var http = require('http');
-
+console.log('1');
+var querystring = require('querystring');
 console.log('2');
+
+var options = {
+  hostname: 'localhost',
+  port: 9000,
+  path: '',
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/x-www-form-urlencoded'
+  }
+};
+console.log('3');
 
 request.http('/', function(error, response, body){
 
-  console.log('3');
+  console.log('4');
 
   if (!error && response.statusCode == 200) {
     console.log(body.name);
