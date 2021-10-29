@@ -35,6 +35,7 @@ var data = querystring.stringify({
 });
 console.log(data);
 
+/*
 var req = http.request(options, function(res) {
 
 console.log('4');
@@ -54,6 +55,16 @@ console.log('5');
 }).on('error', function(e) {
   console.log(e.message);
 });
-
 req.write(data);
 req.end();
+*/
+
+var server = http.createServer(function(req, res) {
+  res.end(data);
+});
+
+console.log('8000番ポートでサーバーを起動する');
+
+// localhostの8000番ポートでサーバーを起動する
+server.listen(8000);
+
