@@ -12,11 +12,11 @@ var server = http.createServer(function(req, res) {
 
 console.log('1');
 
-var request = require('request');
+var http = require('http');
 
 console.log('2');
 
-request.post('/', function(error, response, body){
+request.http('/', function(error, response, body){
 
   console.log('3');
 
