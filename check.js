@@ -17,11 +17,11 @@ var http = require('http');
 var querystring = require('querystring');
 
 console.log('2');
-
+/*
 var options = {
 //  hostname: '34.146.89.221',
   hostname: 'localhost',
-  port: 8000,
+  port: 3000,
   path: '',
   method: 'GET',
   headers: {
@@ -57,8 +57,8 @@ console.log('5');
 });
 req.write(data);
 req.end();
+*/
 
-/*
 var server = http.createServer(function(req, res) {
   console.log('Application started');
   var data2 = querystring.stringify({
@@ -71,7 +71,7 @@ var server = http.createServer(function(req, res) {
 console.log('8000番ポートでサーバーを起動する');
 
 // localhostの8000番ポートでサーバーを起動する
-server.listen();
+server.listen(3000);
 
 console.log('end');
-*/
+
