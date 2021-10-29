@@ -11,14 +11,16 @@ var server = http.createServer(function(req, res) {
 //sserver.listen(8000);
 
 
-var http = require('http');
 console.log('1');
+
+var http = require('http');
 var querystring = require('querystring');
+
 console.log('2');
 
 var options = {
-  hostname: 'localhost',
-  port: 9000,
+//  hostname: 'localhost',
+//  port: 9000,
   path: '',
   method: 'POST',
   headers: {
@@ -27,13 +29,30 @@ var options = {
 };
 console.log('3');
 
-request.http('/', function(error, response, body){
-
-  console.log('4');
-
-  if (!error && response.statusCode == 200) {
-    console.log(body.name);
-  } else {
-    console.log('error: '+ response.statusCode);
-  }
+var data = querystring.stringify({
+    'name': 'テストユーザー'
 });
+console.log('4');
+
+var req = http.request(options, function(res) {
+
+console.log('4');
+  var body = '';
+  res.setEncoding('utf8');
+
+console.log('5');
+  res.on('data', function(chunk) {
+    body += chunk;
+  });
+
+  res.on('end', function() {
+    var name = JSON.parse(body).name;
+    console.log(name);
+  });
+
+}).on('error', function(e) {
+  console.log(e.message);
+});
+
+req.write(data);
+req.end();
