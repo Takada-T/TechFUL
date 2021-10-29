@@ -24,7 +24,7 @@ var options = {
   path: '',
   method: 'GET',
   headers: {
-    'Content-Type': 'application/x-www-form-urlencoded'
+    'Content-Type': 'application/json'
   }
 };
 console.log('3');
@@ -71,10 +71,4 @@ var server = http.createServer(function(req, res) {
 console.log('8000番ポートでサーバーを起動する');
 
 // localhostの8000番ポートでサーバーを起動する
-//server.listen(8000);
-
-http.createServer(function(request, response) {
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.end("( ಠ_ಠ)");
-}).listen(3000);
-
+server.listen();
