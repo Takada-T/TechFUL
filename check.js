@@ -22,7 +22,7 @@ var options = {
 //  hostname: 'localhost',
 //  port: 9000,
   path: '',
-  method: 'POST',
+  method: 'GET',
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded'
   }
@@ -30,9 +30,10 @@ var options = {
 console.log('3');
 
 var data = querystring.stringify({
-    'name': 'テストユーザー'
+    'status_code': '200',
+    'method': 'GET'
 });
-console.log('4');
+console.log(data);
 
 var req = http.request(options, function(res) {
 
