@@ -19,8 +19,8 @@ var querystring = require('querystring');
 console.log('2');
 
 var options = {
-//  hostname: 'localhost',
-//  port: 9000,
+  hostname: 'localhost',
+  port: 8000,
   path: '',
   method: 'GET',
   headers: {
@@ -61,15 +61,20 @@ req.end();
 
 var server = http.createServer(function(req, res) {
   console.log('Application started');
-var data2 = querystring.stringify({
-    'status_code': '200',
-    'method': 'GET'
-});
+  var data2 = querystring.stringify({
+      'status_code': '200',
+      'method': 'GET'
+  });
   res.end(data2);
 });
 
 console.log('8000番ポートでサーバーを起動する');
 
 // localhostの8000番ポートでサーバーを起動する
-server.listen(8000);
+//server.listen(8000);
+
+http.createServer(function(request, response) {
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    response.end("( ಠ_ಠ)");
+}).listen(8000);
 
