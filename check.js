@@ -71,4 +71,6 @@ var server = http.createServer(function(req, res) {
 console.log('8000番ポートでサーバーを起動する');
 
 // localhostの8000番ポートでサーバーを起動する
-//server.listen(8000);
+server.listen(8000);
+
+console.log('end');
