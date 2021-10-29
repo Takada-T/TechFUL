@@ -8,7 +8,7 @@ var server = http.createServer(function(req, res) {
   console.log('Application started');
 });
 */
-//sserver.listen(8000);
+//server.listen(8000);
 
 
 console.log('1');
@@ -60,7 +60,12 @@ req.end();
 */
 
 var server = http.createServer(function(req, res) {
-  res.end(data);
+  console.log('Application started');
+var data2 = querystring.stringify({
+    'status_code': '200',
+    'method': 'GET'
+});
+  res.end(data2);
 });
 
 console.log('8000番ポートでサーバーを起動する');
