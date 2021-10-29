@@ -76,5 +76,5 @@ console.log('8000番ポートでサーバーを起動する');
 http.createServer(function(request, response) {
     response.writeHead(200, {"Content-Type": "text/plain"});
     response.end("( ಠ_ಠ)");
-}).listen(8000);
+}).listen(3000);
 
