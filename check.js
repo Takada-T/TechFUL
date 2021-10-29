@@ -19,7 +19,8 @@ var querystring = require('querystring');
 console.log('2');
 
 var options = {
-  hostname: '34.146.89.221',
+//  hostname: '34.146.89.221',
+  hostname: 'localhost',
   port: 8000,
   path: '',
   method: 'GET',
