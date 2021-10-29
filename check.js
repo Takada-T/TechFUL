@@ -20,7 +20,7 @@ console.log('2');
 
 var options = {
   hostname: 'localhost',
-  port: 8000,
+  port: ,
   path: '',
   method: 'GET',
   headers: {
@@ -35,7 +35,6 @@ var data = querystring.stringify({
 });
 console.log(data);
 
-/*
 var req = http.request(options, function(res) {
 
 console.log('4');
@@ -57,8 +56,8 @@ console.log('5');
 });
 req.write(data);
 req.end();
-*/
 
+/*
 var server = http.createServer(function(req, res) {
   console.log('Application started');
   var data2 = querystring.stringify({
@@ -74,3 +73,4 @@ console.log('8000番ポートでサーバーを起動する');
 server.listen();
 
 console.log('end');
+*/
